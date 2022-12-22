@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
 require "byebug"
 
 puts "Binary Tree"
 
+# Binary Tree data structure implementation
 class BinaryTree
   attr_accessor :root
 
@@ -23,6 +26,7 @@ class BinaryTree
     found = false
     found = find_helper(node.left, value)
     return found if found == true
+
     find_helper(node.right, value)
   end
 
