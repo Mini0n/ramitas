@@ -4,22 +4,22 @@ puts "Binary Tree"
 
 class BinaryTree
   attr_accessor :root
-  
+
   def initialize(node)
     self.root = node
   end
-  
+
   def find(value=nil)
     return "no value to search" if value == nil
     return true if root.value == value
-    
+
     find_helper(root, value)
   end
-  
+
   def find_helper(node, value)
     return false if node.nil?
     return true if node.value == value
-    
+
     found = false
     found = find_helper(node.left, value)
     return found if found == true
@@ -28,10 +28,10 @@ class BinaryTree
 
   def print
     puts "|  root  |  left  |  right  |"
-    
+
     print_helper(root)
   end
-  
+
   def print_helper(node=nil)
     # byebug
     return if node.nil?
@@ -39,12 +39,12 @@ class BinaryTree
     root = node.value.to_s
     left = node.left&.value&.to_s || ""
     right = node.right&.value&.to_s || ""
-    
+
     root = root.center(8, " ")
     left = left.center(8, " ")
     right = right.center(9, " ")
-    puts "|#{root}|#{left}|#{right}|" 
-    
+    puts "|#{root}|#{left}|#{right}|"
+
     print_helper(node.left)
     print_helper(node.right)
   end
@@ -55,14 +55,14 @@ end
 
 class Node
   attr_accessor :left, :right, :value
-  
-  def initialize(left=nil, right=nil, value=nil) 
+
+  def initialize(left=nil, right=nil, value=nil)
     self.left = left
     self.right = right
     self.value = value
   end
-  
-  
+
+
 end
 
 
