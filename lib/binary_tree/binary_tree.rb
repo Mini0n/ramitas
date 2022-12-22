@@ -5,7 +5,7 @@ puts "Binary Tree"
 class BinaryTree
   attr_accessor :root
 
-  def initialize(node)
+  def initialize(node=nil)
     self.root = node
   end
 
